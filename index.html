@@ -14,10 +14,29 @@
         <h1>
             {{ titulo }}
         </h1>
+        <h2>Saldo: ${{ cantidad }}</h2>
+
+        <a v-bind:href="enlance">V-BIND forma larga</a>
+        <a :href="enlance">V-BIND forma corta</a>
+        <br>
+        <!-- <h2>
+            {{ estado ? 'Activa' : 'Inactiva' }}
+        </h2>   -->
+        <h2 v-if="estado">C. Activa</h2>
+        <h2 v-else>C. Inactiva</h2>
+
+        <br>
+
+        <h2 v-if="cantidad > 500">Cantidad: {{cantidad}}</h2>
+        <h2 v-else-if="cantidad <= 400 && cantidad > 0">
+            Cantidad: $ <span style="color:orange">{{cantidad}}</span>
+        </h2>
+        <h2 v-else>Sin cantidad: {{cantidad}}</h2>
+
     </div>
     <script src="main.js"></script>
     <script>
-        const mountedApp = app.mount('#app');
+        app.mount('#app');
     </script>
 </body>
 
