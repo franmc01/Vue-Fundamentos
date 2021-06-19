@@ -1,4 +1,5 @@
 const app = Vue.createApp({
+    name: 'BancoApp',
     data() {
         return {
             titulo: 'Mi Banco 1.0',
@@ -28,6 +29,10 @@ const app = Vue.createApp({
         },
         textUppercase() {
             return this.titulo.toUpperCase();
+        },
+        anio() {
+            let anioActual = new Date().getFullYear();
+            return anioActual;
         }
     },
 });
