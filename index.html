@@ -16,9 +16,9 @@
 <body>
     <div id="app" class="container">
         <h1>
-            {{ titulo }}
+            {{ textUppercase }}
         </h1>
-        <h2 class="bg-dark" :class="[cantidad > 500 ? 'text-success' : 'text-danger' ]">Saldo: ${{ cantidad }}</h2>
+        <h2 class="bg-dark" :class="colorTexto">Saldo: ${{ cantidad }}</h2>
 
         <a v-bind:href="enlance">V-BIND forma larga</a>
         <br>
@@ -32,9 +32,9 @@
 
         <br>
 
-        <h2 v-if="cantidad > 500">Cantidad: {{cantidad}}</h2>
-        <h2 v-else-if="cantidad <= 400 && cantidad > 0">
-            Cantidad: $ <span style="color:red">{{cantidad}}</span>
+        <h2 v-if="cantidad > 600">Cantidad: {{cantidad}}</h2>
+        <h2 v-else-if="cantidad <= 500 && cantidad > 0">
+            Cantidad: $ <span style="color:orange">{{cantidad}}</span>
         </h2>
         <h2 v-else>Sin cantidad: {{cantidad}}</h2>
 

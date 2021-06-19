@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             titulo: 'Mi Banco 1.0',
-            cantidad: 200,
+            cantidad: 600,
             enlance: 'https://youtube.com',
             estado: false,
             servicios: ['giros', 'tranferencias', 'pagos', 'cheques'],
@@ -21,5 +21,13 @@ const app = Vue.createApp({
             }
             this.cantidad -= valor;
         }
-    }
+    },
+    computed: {
+        colorTexto() {
+            return this.cantidad > 500 ? 'text-success' : 'text-danger';
+        },
+        textUppercase() {
+            return this.titulo.toUpperCase();
+        }
+    },
 });
